@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MUSIC & MOVIE LIST</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <header>
+      <img src=".images/MusicaVerde.jpg" alt="music" width="100" height="100" />
+      <img src=".images/user.png" alt="usermusic" width="100" height="100" />
+      <h1>MUSIC & MOVIE LIST</h1>
+    </header>
+    <hr />
+    <p id="message"></p>
+    <hr />
+    <div id="logon-register" style="display: none">
+      <button type="button" id="logon">logon</button>
+      <button type="button" id="register">register</button>
+    </div>
+    <div id="logon-div" style="display: none">
+      <form>
+        <div>
+          <label for="email">Enter your email:</label>
+          <input type="email" id="email" />
+        </div>
+        <div>
+          <label for="password">Enter your password:</label>
+          <input type="password" id="password" />
+        </div>
+        <button type="button" id="logon-button">logon</button>
+        <button type="button" id="logon-cancel">cancel</button>
+      </form>
+    </div>
+    <div id="register-div" style="display: none">
+      <form>
+        <div>
+          <label for="name">Enter your name:</label>
+          <input type="text" id="name" />
+        </div>
+        <div>
+          <label for="email1">Enter your email: </label>
+          <input type="email" id="email1" />
+        </div>
+        <div>
+          <label for="password1">Enter your password:</label>
+          <input type="password" id="password1" />
+        </div>
+        <div>
+          <label for="password2">verify your password:</label>
+          <input type="password" id="password2" />
+        </div>
+        <button type="button" id="register-button">register</button>
+        <button type="button" id="register-cancel">cancel</button>
+      </form>
+    </div>
+    <div id="navigation" style="display: none">
+      <button id="music-link">Music</button>
+      <button id="movie-link">Movie</button>
+    </div>
+    <!-- tabla  músic -->
+    <div id="music" style="display: none">
+      <p id="music-message"></p>
+      <table id="music-table">
+        <tr id="music-table-header">
+          <th>Singer</th>
+          <th>Genre</th>
+          <th>Song</th>
+          <th colspan="2">Actions</th>
+        </tr>
+      </table>
+      <button type="button" id="add-music">add Song</button>
+      <button type="button" id="logoff">log off</button>
+    </div>
+    <div id="edit-music" style="display: none">
+      <form>
+        <div>
+          <label for="singer">Singer:</label>
+          <input type="text" id="singer" />
+        </div>
+        <div>
+          <label for="song">song:</label>
+          <input type="text" id="song" />
+        </div>
+        <div>
+          <label for="genre">Genre:</label>
+          <select id="genre">
+            <option value="pop">pop</option>
+            <option value="country">country</option>
+            <option value="rock">rock</option>
+            <option value="clasic">clasic</option>
+            <option value="electronic">electronic</option>
+            <option value="latina">latina</option>
+            <option value="salsa">salsa</option>
+            <option value="merengue">merengue</option>
+            <option value="pasodoble">pasodoble</option>
+            <option value="blues">blues</option>
+            <option value="jazz">jazz</option>
+            <option value="soul">soul</option>
+            <option value="rap">rap</option>
+          </select>
+        </div>
+        <button type="button" id="adding-music">add</button>
+        <button type="button" id="edit-cancel">cancel</button>
+      </form>
+    </div>
+    <!-- MOVIE PART -->
+    <div id="movie" style="display: none">
+      <p id="movie-message"></p>
+      <table id="movie-table">
+        <tr id="movie-table-header">
+          <th>director</th>
+          <th>Genre</th>
+          <th>Stitle</th>
+          <th colspan="2">Actions</th>
+        </tr>
+      </table>
+      <button type="button" id="add-movie">add title</button>
+      <button type="button" id="logoff">log off</button>
+    </div>
+    <div id="edit-movie" style="display: none">
+      <form>
+        <div>
+          <label for="director">director:</label>
+          <input type="text" id="director" />
+        </div>
+        <div>
+          <label for="title">title:</label>
+          <input type="text" id="title" />
+        </div>
+        <div>
+          <label for="genre1">Genre:</label>
+          <select id="genre1">
+            <option value="drama">drama</option>
+            <option value="action">action</option>
+            <option value="horror">horror</option>
+            <option value="comedy">comedy</option>
+          </select>
+        </div>
+        <button type="button" id="adding-movie">add</button>
+        <button type="button" id="edit-cancel1">cancel</button>
+      </form>
+    </div>
+    <script src="./index.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(80, 150, 116);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: grey;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.music-table-container,
+.movie-table-container {
+  flex: 1;
+  background-color: rgb(120, 121, 117);
+  border: 1px solid #503737;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.music-table-container h2,
+.movie-table-container h2 {
+  color: white;
+  background-color: grey;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+#music-table-header,
+#movie-table-header {
+  background-color: #ccc;
+  color: #333;
+  font-weight: bold;
+}
+
+button {
+  background-color: rgb(14, 14, 233);
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: rgb(4, 4, 190);
+}
+
+form {
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Estilos específicos para mejorar la accesibilidad */
+h1,
+h2,
+h3 {
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+label {
+  font-size: 1rem;
+  color: #333;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input,
+select {
+  padding: 10px;
+  font-size: 1rem;
+  color: #333;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+textarea {
+  padding: 10px;
+  font-size: 1rem;
+  color: #333;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  width: 100%;
+  margin-bottom: 10px;
+}
