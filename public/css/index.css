@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* general styles */
 * {
   box-sizing: border-box;
 }
@@ -18,34 +18,33 @@ header {
   padding: 10px;
 }
 
-.container {
-  display: flex;
-  justify-content: space-around;
-  margin: 20px auto;
-  max-width: 1200px;
+#logon-register {
+  align-items: center;
 }
 
-.music-table-container,
-.movie-table-container {
-  flex: 1;
-  background-color: rgb(120, 121, 117);
-  border: 1px solid #503737;
-  border-radius: 5px;
+#music-search,
+#movie-search {
+  width: 100%; /*ancho*/
   padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.music-table-container h2,
-.movie-table-container h2 {
-  color: white;
-  background-color: grey;
-  padding: 10px;
-  margin-bottom: 10px;
+#music-search:focus,
+#movie-search:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  margin-right: 60px;
+  margin-left: 10px;
 }
 
 th,
@@ -55,11 +54,20 @@ td {
   border: 1px solid #ddd;
 }
 
+#movie-table,
+#music-table {
+  margin: 0 auto;
+  width: 90%;
+}
+
 #music-table-header,
 #movie-table-header {
-  background-color: #ccc;
-  color: #333;
+  /*background-color: #ccc;*/
+  background-color: grey;
+  /*color: #333;*/
+  color: #f8f8f8;
   font-weight: bold;
+  width: 100%;
 }
 
 button {
@@ -69,6 +77,9 @@ button {
   border: none;
   cursor: pointer;
   margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  align-items: center;
 }
 
 button:hover {
@@ -80,12 +91,30 @@ form {
   margin: auto;
 }
 
-/* Estilos específicos para mejorar la accesibilidad */
+/* specific stayles accesibility */
 h1,
 h2,
 h3 {
   font-size: 1.8rem;
   line-height: 1.2;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+h2 {
+  color: #ffffff;
+  padding: 10px; /* Espaciado interno para mayor legibilidad */
+  border-radius: 5px;
+  text-align: center; /* Centrar el texto */
+  margin-bottom: 20px;
+}
+
+h2.alternative {
+  /* Alternativa con mejor contraste según WCAG */
+  color: #f8f8f8; /* Color más claro para mejor contraste */
+  background-color: #333333; /* Fondo aún más oscuro */
 }
 
 label {
@@ -97,13 +126,15 @@ label {
 
 input,
 select {
+  margin: 0 auto; /* Centrará la tabla */
+  width: 90%;
   padding: 10px;
   font-size: 1rem;
   color: #333;
   border: 1px solid #ddd;
   background-color: #fff;
-  width: 100%;
   margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 textarea {
