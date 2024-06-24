@@ -33,7 +33,7 @@ const createMusic = async (req, res) => {
   const music = await Music.create(req.body);
   res
     .status(StatusCodes.CREATED)
-    .json({ msg: "Movie created successfully", music });
+    .json({ msg: "Music created successfully", music });
 };
 const updateMusic = async (req, res) => {
   const {

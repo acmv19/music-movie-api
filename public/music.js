@@ -72,14 +72,14 @@ export const showMusic = async () => {
       } else {
         for (let i = 0; i < data.musics.length; i++) {
           let rowEntry = document.createElement("tr");
-
-          let editButton = `<td><button type="button" class="editButton"  data-id=${data.musics[i]._id}>edit</button></td>`;
-          let deleteButton = `<td><button type="button" class="deleteButton" data-id=${data.musics[i]._id}>delete</button></td>`;
+          console.log(data);
+          let editButton = `<button type="button" class="editButton"  data-id=${data.musics[i]._id}>edit</button>`;
+          let deleteButton = `<button type="button" class="deleteButton" data-id=${data.musics[i]._id}>delete</button>`;
           let rowHTML = `
               <td>${data.musics[i].singer}</td>
               <td>${data.musics[i].song}</td>
               <td>${data.musics[i].Genre}</td>
-              <div>${editButton}${deleteButton}</div>`;
+              <td>${editButton}${deleteButton}</td>`;
 
           rowEntry.innerHTML = rowHTML;
           children.push(rowEntry);

@@ -11,15 +11,18 @@
     <header>
       <img src=".images/MusicaVerde.jpg" alt="music" width="100" height="100" />
       <img src=".images/user.png" alt="usermusic" width="100" height="100" />
+      <img src=".images/cinema.webp" alt="movie" width="100" height="100" />
       <h1>MUSIC & MOVIE LIST</h1>
     </header>
     <hr />
+    <!-- Msg display area -->
     <p id="message"></p>
     <hr />
     <div id="logon-register" style="display: none">
       <button type="button" id="logon">logon</button>
       <button type="button" id="register">register</button>
     </div>
+    <!-- Logon form -->
     <div id="logon-div" style="display: none">
       <form>
         <div>
@@ -34,6 +37,7 @@
         <button type="button" id="logon-cancel">cancel</button>
       </form>
     </div>
+    <!-- Registration form -->
     <div id="register-div" style="display: none">
       <form>
         <div>
@@ -56,24 +60,39 @@
         <button type="button" id="register-cancel">cancel</button>
       </form>
     </div>
+    <!-- Navigation buttons -->
     <div id="navigation" style="display: none">
-      <button id="music-link">Music</button>
-      <button id="movie-link">Movie</button>
+      <button id="music-link">MUSIC</button>
+      <button id="movie-link">MOVIE</button>
     </div>
     <!-- tabla  músic -->
     <div id="music" style="display: none">
+      <h2 id="music-section-header" aria-label="Music Table Section">
+        <!--arial-label = identificar secciones mas claramente-->
+        MUSIC TABLE
+      </h2>
       <p id="music-message"></p>
+      <input
+        id="music-search"
+        type="text"
+        placeholder="Search music..."
+        onkeyup="SearchMusic()"
+      />
+      <!-- c/v q' se escriba algo en cualquiera de estos campos, se llamará a la función correspondiente para realizar la búsqueda dinámica(tabla) -->
       <table id="music-table">
         <tr id="music-table-header">
           <th>Singer</th>
-          <th>Genre</th>
           <th>Song</th>
+          <th>Genre</th>
           <th colspan="2">Actions</th>
         </tr>
+
+        <!-- Table rows will be dynamically added with JavaScript -->
       </table>
       <button type="button" id="add-music">add Song</button>
       <button type="button" id="logoff">log off</button>
     </div>
+    <!-- Music edit form -->
     <div id="edit-music" style="display: none">
       <form>
         <div>
@@ -87,7 +106,7 @@
         <div>
           <label for="genre">Genre:</label>
           <select id="genre">
-            <option value="pop">pop</option>
+            <option value="pop" selected="selected">pop</option>
             <option value="country">country</option>
             <option value="rock">rock</option>
             <option value="clasic">clasic</option>
@@ -108,17 +127,26 @@
     </div>
     <!-- MOVIE PART -->
     <div id="movie" style="display: none">
+      <h2 id="movie-section-header" aria-label="Movie Table Section">
+        MOVIE TABLE
+      </h2>
       <p id="movie-message"></p>
+      <input
+        id="movie-search"
+        type="text"
+        placeholder="Search movies..."
+        onkeyup="searchMovie()"
+      />
       <table id="movie-table">
         <tr id="movie-table-header">
           <th>director</th>
+          <th>Title</th>
           <th>Genre</th>
-          <th>Stitle</th>
           <th colspan="2">Actions</th>
         </tr>
       </table>
       <button type="button" id="add-movie">add title</button>
-      <button type="button" id="logoff">log off</button>
+      <button type="button" id="logoff-from-movie">log off</button>
     </div>
     <div id="edit-movie" style="display: none">
       <form>
@@ -143,6 +171,7 @@
         <button type="button" id="edit-cancel1">cancel</button>
       </form>
     </div>
+    <!-- Script for loading JavaScript file -->
     <script src="./index.js" type="module"></script>
   </body>
 </html>

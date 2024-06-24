@@ -13,7 +13,7 @@ export const handleAddEditM = () => {
   title = document.getElementById("title");
   genre = document.getElementById("genre");
   addingMovie = document.getElementById("adding-movie");
-  const editCancel = document.getElementById("edit-cancel");
+  const editCancel = document.getElementById("edit-cancel1");
 
   addEditDiv.addEventListener("click", async (e) => {
     if (inputEnabled && e.target.nodeName === "BUTTON") {
@@ -36,7 +36,7 @@ export const handleAddEditM = () => {
               Authorization: `Bearer ${token}`,
             },
             body: JSON.stringify({
-              director: singer.value,
+              director: director.value,
               title: title.value,
               genre: genre.value,
             }),

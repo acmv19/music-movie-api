@@ -16,7 +16,7 @@ let movieTableHeader = null;
 
 export const handleMovie = () => {
   movieDiv = document.getElementById("movie");
-  const logoff = document.getElementById("logoff");
+  const logoff = document.getElementById("logoff-from-movie");
   const addMovie = document.getElementById("add-movie");
   movieTable = document.getElementById("movie-table");
   movieTableHeader = document.getElementById("movie-table-header");
@@ -34,6 +34,7 @@ export const handleMovie = () => {
         message.textContent = "";
         showDeleteMovie(e.target.dataset.id); // Llama a la función showDelete con el id de la movie
       } else if (e.target === logoff) {
+        console.log("-----epaleeeee------");
         setToken(null);
 
         message.textContent = "You have been logged off.";
@@ -73,11 +74,11 @@ export const showMovie = async () => {
         for (let i = 0; i < data.movies.length; i++) {
           let rowEntry = document.createElement("tr");
 
-          let editButton = `<td><button type="button" class="editButton"  data-id=${data.musics[i]._id}>edit</button></td>`;
-          let deleteButton = `<td><button type="button" class="deleteButton" data-id=${data.musics[i]._id}>delete</button></td>`;
+          let editButton = `<button type="button" class="editButton"  data-id=${data.movies[i]._id}>edit</button>`;
+          let deleteButton = `<button type="button" class="deleteButton" data-id=${data.movies[i]._id}>delete</button>`;
           let rowHTML = `
-                <td>${data.movies[i].singer}</td>
-                <td>${data.movies[i].song}</td>
+                <td>${data.movies[i].director}</td>
+                <td>${data.movies[i].title}</td>
                 <td>${data.movies[i].Genre}</td>
                 <div>${editButton}${deleteButton}</div>`;
 
