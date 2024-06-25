@@ -5,6 +5,7 @@ let addEditDiv = null;
 let director = null;
 let title = null;
 let genre = null;
+let ranking = null;
 let addingMovie = null;
 
 export const handleAddEditM = () => {
@@ -12,6 +13,7 @@ export const handleAddEditM = () => {
   director = document.getElementById("director");
   title = document.getElementById("title");
   genre = document.getElementById("genre");
+  ranking = document.getElementById("ranking1");
   addingMovie = document.getElementById("adding-movie");
   const editCancel = document.getElementById("edit-cancel1");
 
@@ -39,6 +41,7 @@ export const handleAddEditM = () => {
               director: director.value,
               title: title.value,
               genre: genre.value,
+              ranking: ranking.value,
             }),
           });
 
@@ -55,7 +58,7 @@ export const handleAddEditM = () => {
             director.value = "";
             title.value = "";
             genre.value = "drama";
-
+            ranking.value = "";
             showMovie();
           } else {
             message.textContent = data.msg;
@@ -78,7 +81,8 @@ export const showAddEditMovie = async (movieId) => {
   if (!movieId) {
     director.value = "";
     title.value = "";
-    genre.value = "drama";
+    genre.value = "";
+    ranking.value = "";
     addingMovie.textContent = "add";
     message.textContent = "";
 
@@ -100,6 +104,7 @@ export const showAddEditMovie = async (movieId) => {
         director.value = data.movie.director;
         title.value = data.movie.title;
         genre.value = data.movie.genre;
+        ranking.value = data.movie.ranking;
         addingMovie.textContent = "update";
         message.textContent = "";
         addEditDiv.dataset.id = movieId;

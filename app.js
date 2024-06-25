@@ -26,22 +26,18 @@ app.set("trust proxy", 1);
 app.use(
   rateLimiter({
     windowMs: 15 * 60 * 1000, //15 min
-    max: 100, // limit each IP to 100 request per window
+    max: 100,
   })
 );
 app.use(express.json());
-// extra packages
+// <------extra packages------>
 app.use(helmet());
 app.use(cors());
 app.use(xss());
-//app.use(rateLimiter())
 
-/*app.get("/", (req, res) => {
-  res.send("music api");
-});*/
 app.use(express.static("public"));
 
-// routes
+// <-----routes------>
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/music", authenticateUser, MusicRouter);
 app.use("/api/v1/movie", authenticateUser, MovieRouter);
@@ -63,3 +59,5 @@ const start = async () => {
 };
 
 start();
+
+module.exports = app;

@@ -1,4 +1,3 @@
-//const { CustomAPIError } = require("../errors");
 const { StatusCodes } = require("http-status-codes");
 
 const errorHandlerMiddleware = (err, req, res, next) => {
@@ -7,10 +6,6 @@ const errorHandlerMiddleware = (err, req, res, next) => {
     statusCode: err.statusCode || StatusCodes.INTERNAL_SERVER_ERROR,
     msg: err.message || "something went wrong. try again :s",
   };
-
-  /* if (err instanceof CustomAPIError) {
-    return res.status(err.statusCode).json({ msg: err.message });
-  }*/
 
   if (err.name === "validationError") {
     console.log(Object.values(err.errors));
@@ -29,7 +24,6 @@ const errorHandlerMiddleware = (err, req, res, next) => {
     customError.msg = `no item found with id ${err.value}`;
   }
   return res.status(customError.statusCode).json({ msg: customError.msg });
-  //return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err });
 };
 
 module.exports = errorHandlerMiddleware;

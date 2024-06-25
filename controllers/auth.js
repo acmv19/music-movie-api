@@ -9,7 +9,6 @@ const register = async (req, res) => {
   res.status(StatusCodes.CREATED).json({ user: { name: user.name }, token });
 };
 const login = async (req, res) => {
-  //res.send(" login user");
   const { email, password } = req.body;
   if (!email || !password) {
     throw new BadRequestError("please insert email and password");

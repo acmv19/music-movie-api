@@ -12,10 +12,21 @@ body {
 }
 
 header {
-  background-color: grey;
+  background-color: rgb(31, 31, 31);
   color: white;
   text-align: center;
   padding: 10px;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-top: 15%;
+}
+
+#message {
+  color: black;
 }
 
 #logon-register {
@@ -63,7 +74,7 @@ td {
 #music-table-header,
 #movie-table-header {
   /*background-color: #ccc;*/
-  background-color: grey;
+  background-color: rgb(31, 31, 31);
   /*color: #333;*/
   color: #f8f8f8;
   font-weight: bold;

@@ -79,6 +79,7 @@ export const showMusic = async () => {
               <td>${data.musics[i].singer}</td>
               <td>${data.musics[i].song}</td>
               <td>${data.musics[i].Genre}</td>
+              <td>${data.musics[i].ranking}</td>
               <td>${editButton}${deleteButton}</td>`;
 
           rowEntry.innerHTML = rowHTML;
