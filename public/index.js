@@ -1,5 +1,3 @@
-// index.js
-
 let activeDiv = null;
 
 export const setDiv = (newDiv) => {
@@ -52,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   handleAddEdit();
   handleAddEditM();
   setToken(token); // Llama a setToken para configurar la vista inicial basada en el token
-  // <<<<----------Agregar manejadores de eventos para los botones de búsqueda
+  // <<<<----------Add event handlers for search buttons
   document
     .getElementById("music-search")
     .addEventListener("keyup", SearchMusic); // keyup:detectar la acción de soltar una tecla y se utiliza comúnmente para realizar acciones inmediatas basadas en texto ingresado por user
@@ -61,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .addEventListener("keyup", searchMovie);
   //<<<<<<<----------------------------------
 });
-//<<<<<----------buscadores----------->>>>>>>
+//<<<<<----------buscadores(searches)----------->>>>>>>
 //MUSIC
 function SearchMusic() {
   const table = document.getElementById("music-table");
@@ -84,7 +82,7 @@ function SearchMusic() {
       }
     }
 
-    row.style.display = found ? "" : "none"; // mostrar
+    row.style.display = found ? "" : "none"; // show
   }
 }
 //MOVIE
@@ -110,7 +108,7 @@ function searchMovie() {
       }
     }
 
-    row.style.display = found ? "" : "none"; // mostrar
+    row.style.display = found ? "" : "none"; // show
   }
 }
 
@@ -138,8 +136,8 @@ function showMusicTable() {
   const musicDiv = document.getElementById("music");
   const movieDiv = document.getElementById("movie");
 
-  musicDiv.style.display = "block"; //mostrar
-  movieDiv.style.display = "none"; //ocultar
+  musicDiv.style.display = "block"; //show
+  movieDiv.style.display = "none"; //hide
 
   showMusic(); // Llamar a la función para mostrar la tabla de música
 }

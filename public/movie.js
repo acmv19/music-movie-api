@@ -80,8 +80,8 @@ export const showMovie = async () => {
                 <td>${data.movies[i].director}</td>
                 <td>${data.movies[i].title}</td>
                 <td>${data.movies[i].Genre}</td>
+                <td>${data.movies[i].ranking}</td>
                 <div>${editButton}${deleteButton}</div>`;
-
           rowEntry.innerHTML = rowHTML;
           children.push(rowEntry);
         }

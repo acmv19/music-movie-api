@@ -5,6 +5,7 @@ let addEditDiv = null;
 let singer = null;
 let song = null;
 let genre = null;
+let ranking = null;
 let addingMusic = null;
 
 export const handleAddEdit = () => {
@@ -12,6 +13,7 @@ export const handleAddEdit = () => {
   singer = document.getElementById("singer");
   song = document.getElementById("song");
   genre = document.getElementById("genre");
+  ranking = document.getElementById("ranking");
   addingMusic = document.getElementById("adding-music");
   const editCancel = document.getElementById("edit-cancel");
 
@@ -39,6 +41,7 @@ export const handleAddEdit = () => {
               singer: singer.value,
               song: song.value,
               genre: genre.value,
+              ranking: ranking.value,
             }),
           });
 
@@ -55,7 +58,7 @@ export const handleAddEdit = () => {
             singer.value = "";
             song.value = "";
             genre.value = "pop";
-
+            ranking.value = "";
             showMusic();
           } else {
             message.textContent = data.msg;

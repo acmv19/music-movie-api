@@ -23,6 +23,12 @@ const MovieSchema = new mongoose.Schema(
       ref: "User",
       required: [true, "Please provide a user"],
     },
+    ranking: {
+      type: Number,
+      min: 1,
+      max: 5,
+      default: 3,
+    },
   },
   { timestamps: true }
 );

@@ -25,12 +25,17 @@ const getMovie = async (req, res) => {
 };
 const createMovie = async (req, res) => {
   req.body.createdBy = req.user.userId;
+  if (req.body.ranking && (req.body.ranking < 1 || req.body.ranking > 5)) {
+    throw new BadRequestError("Ranking must be between 1 and 5");
+  }
   const movie = await Movie.create(req.body);
-  res.status(StatusCodes.CREATED).json({ movie });
+  res
+    .status(StatusCodes.CREATED)
+    .json({ msg: "Movie created successfully", movie });
 };
 const updateMovie = async (req, res) => {
   const {
-    body: { director, title },
+    body: { director, title, ranking },
     user: { userId },
     params: { id: movieId },
   } = req;
@@ -47,6 +52,9 @@ const updateMovie = async (req, res) => {
   if (!movie) {
     throw new NotFoundError(`not movie with id  ${movieId}`);
   }
+  if (ranking !== undefined && (ranking < 1 || ranking > 5)) {
+    throw new BadRequestError("Ranking must be between 1 and 5");
+  }
   res.status(StatusCodes.OK).json({ movie });
 };
 const deleteMovie = async (req, res) => {
@@ -61,7 +69,7 @@ const deleteMovie = async (req, res) => {
   if (!movie) {
     throw new NotFoundError(`not movie with id  ${movieId}`);
   }
-  res.status(StatusCodes.OK).send();
+  res.status(StatusCodes.OK).json({ msg: "Movie deleted successfully" });
 };
 
 module.exports = {
